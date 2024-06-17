@@ -1,11 +1,11 @@
 {
   "name": "maris-cargo-limited",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "node server/server.js",
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
