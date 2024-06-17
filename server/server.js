@@ -56,7 +56,7 @@ server.use('/api/employee',employeRouteHandler)
 
 server.use(express.static(path.join(__dirname,'/client/dist' )))
 
-server.get('*',(resq, res) => {
+server.get('*',(req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'dist' ,'index.html'))
 })
 
