@@ -18,6 +18,8 @@ dotenv.config();
 // calling express function and assigning it to the server variable 
 //creating an instance of a server from the express object
 
+const __dirname = path.resolve();
+
 const server = express()
 
 // connecting to the database
@@ -38,7 +40,7 @@ const connectdb = async()=>{
 }
 
 connectdb()
-const __dirname = path.resolve();
+
 
 // middle wares
 server.use(express.json())
