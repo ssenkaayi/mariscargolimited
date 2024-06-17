@@ -11,6 +11,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser'
+import path from 'path'
 
 dotenv.config();
 
@@ -37,6 +38,7 @@ const connectdb = async()=>{
 }
 
 connectdb()
+const __dirname = path.resolve();
 
 // middle wares
 server.use(express.json())
@@ -51,6 +53,13 @@ server.use('/api/delivery', deliveryRouteHandler)
 server.use('/api/payment',paymentRouteHandler)
 server.use('/api/expense',expenseRouteHandler)
 server.use('/api/employee',employeRouteHandler)
+
+server.use(express.static(path.join(__dirname,'/client/dist' )))
+
+server.get('*',(resq, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist' ,'index.html'))
+})
+
 
 // starting up the server by using the listen method and assign the server a port
 
