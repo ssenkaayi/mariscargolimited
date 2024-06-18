@@ -59,7 +59,7 @@ export const loginEmploye = async(req,res,next)=>{
         if(!isValidPassword) return next(errorHandler(400,'incorrect email and password')) 
     
         const token = generateToken(isEmploye._id)
-        const {password:pass,...rest} = isEmploye._do
+        const {password:pass,...rest} = isEmploye._doc
         res.cookie('access_token',token,{httpOnly:true}).status(200).json(rest)
 
       }catch(error){
