@@ -44,6 +44,7 @@ const generateToken = (id)=>{
 }
 
 export const loginEmploye = async(req,res,next)=>{
+    console.log("charles")
 
     try{
  

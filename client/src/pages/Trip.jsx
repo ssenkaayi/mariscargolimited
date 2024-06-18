@@ -22,6 +22,13 @@ export default function Trip() {
       })
   
       const data = await res.json()
+      console.log(data.message)
+
+      if(data.message === 'token expired'){
+        alert('token expired login again')
+        window.localStorage.clear()
+        window.location.href = './login'
+      }
 
       updateClientData(data)
 

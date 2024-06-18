@@ -24,6 +24,12 @@ export default function Supplier() {
   
       const data = await res.json()
 
+      if(data.message === 'token expired'){
+        alert('token expired login again')
+        window.localStorage.clear()
+        window.location.href = './login'
+      }
+
       updateClientData(data)
   
       // console.log(clientData)

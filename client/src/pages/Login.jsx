@@ -20,7 +20,7 @@ export default function Login() {
     {...employData,
       [e.target.id]:e.target.value,})
 
-      // console.log(employData)
+   
   }
 
   //linking our api to send req to the server

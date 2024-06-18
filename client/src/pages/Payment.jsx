@@ -24,8 +24,14 @@ export default function Payment() {
   
       const data = await res.json()
 
+      if(data.message === 'token expired'){
+        alert('token expired login again')
+        window.localStorage.clear()
+        window.location.href = './login'
+      }
+
       updateClientData(data)
-      console.log(data)
+      // console.log(data)
 
     }catch(error){
       console.log(error)
